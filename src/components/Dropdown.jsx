@@ -99,7 +99,7 @@ const Dropdown = () => {
          { isPropertyListingsError && <p>{isPropertyListingsError}</p> }
 
         {
-          !propertyListings || !propertyListings?.length &&
+          !propertyListings && !propertyListings?.length &&
           <img src={logo} alt='' width={'100%'} />
         }
         {
