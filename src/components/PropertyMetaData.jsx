@@ -1,14 +1,11 @@
 import { useState } from 'react'
-import Spinner from './utils/Spinner' 
+import Spinner from './utils/Spinner'
 
 const PropertyMetaData = ({ property }) => {
   const [showMore, setShowMore] = useState(false)
   return (
     <div className='meta-data'>
-      {
-        !property && 
-        Spinner(!property)
-      }
+      {!property && Spinner(!property)}
       <div className='listingImage'>
         <img src={property?.coverImageUrl} alt='' className='actual-Image' />
       </div>
@@ -56,11 +53,13 @@ const PropertyMetaData = ({ property }) => {
                 ? property?.description
                 : `${property?.description.substring(0, 200)}`}
               <div>
-                <button
-                  className='btn-show-more'
-                  onClick={() => setShowMore(!showMore)}>
-                  {!showMore ? 'show more' : 'show less'}
-                </button>
+                {property?.description.length > 200 && (
+                  <button
+                    className='btn-show-more'
+                    onClick={() => setShowMore(!showMore)}>
+                    {!showMore ? 'show more' : 'show less'}
+                  </button>
+                )}
               </div>
             </p>
           )}
