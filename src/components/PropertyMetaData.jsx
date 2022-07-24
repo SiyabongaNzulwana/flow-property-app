@@ -112,52 +112,6 @@ const PropertyMetaData = ({ property }) => {
           </div>
         </div>
       )}
-      {property?.propertyOverView && (
-        <div>
-          <h3>Property Overview</h3>
-          <div className='property-overview-class'>
-            {property?.propertyOverView?.length &&
-              property?.propertyOverView.map((item, index) => {
-                return (
-                  <div key={index}>
-                    {item?.name === 'Property Type' && (
-                      <div className='property-type'>
-                        <p style={{ fontWeight: 'bolder' }}>Property Type</p>
-                        <p>{item['value']}</p>
-                      </div>
-                    )}
-
-                    {item?.name === 'Property Title' && (
-                      <div className='property-type'>
-                        <p style={{ fontWeight: 'bolder' }}>Property Title</p>
-                        <p>{item['value']}</p>
-                      </div>
-                    )}
-
-                    {item?.name === 'Monthly levy' && (
-                      <div className='property-type'>
-                        <p style={{ fontWeight: 'bolder' }}>Monthly levy</p>
-                        <p>{item['value']}</p>
-                      </div>
-                    )}
-                    {item?.name === 'Monthly rates' && (
-                      <div className='property-type'>
-                        <p style={{ fontWeight: 'bolder' }}>Monthly Rates </p>
-                        <p>{item['value']}</p>
-                      </div>
-                    )}
-                    {item?.name === 'Erf size' && item?.value !== null && (
-                      <div className='property-type'>
-                        <p style={{ fontWeight: 'bolder' }}>Erf Size </p>
-                        <p>{item['value']}</p>
-                      </div>
-                    )}
-                  </div>
-                )
-              })}
-          </div>
-        </div>
-      )}
       <hr />
 
       {property?.units[0] && (
