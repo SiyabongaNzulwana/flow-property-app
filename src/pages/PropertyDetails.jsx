@@ -2,14 +2,12 @@
 import { useParams } from 'react-router-dom'
 import useFetch from './../components/utils/useFetch'
 import PropertyMetaData from './../components/PropertyMetaData'
-import Spinner from '../components/utils/Spinner'
 
 const PropertyDetails = () => {
   const { propertyId } = useParams()
 
   const {
     data: property,
-    isPending,
     error
   } = useFetch(`https://api-staging.flowliving.com/v3/guest/properties/${propertyId}`)
 

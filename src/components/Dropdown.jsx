@@ -44,6 +44,8 @@ const Dropdown = () => {
     `https://api-staging.flowliving.com/v3/guest/search?listingType=${listingType}&listingSector=${listingSector}&organisation=${selectedOrg}&_start=${_start}&_limit=${_limit}`
   )
 
+  console.log('propertyListings:: ', propertyListings)
+
   return (
     <div className='content-container'>
       {isPending && Spinner(isPending)}
@@ -97,7 +99,7 @@ const Dropdown = () => {
          { isPropertyListingsError && <p>{isPropertyListingsError}</p> }
 
         {
-          !propertyListings && !propertyListings?.length &&
+          !propertyListings || !propertyListings?.length &&
           <img src={logo} alt='' width={'100%'} />
         }
         {
